@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Teko:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --cor-texto: white;
+    --cor-site: black;
+    --fonte-principal: 'Teko', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.cabecalho{
+    background-color: var(--cor-site);
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    place-items: left;
+}
+
+.cabecalho img{
+    width: 40%;
+    height: auto;
+    margin: 1.5% 0 1.5% 45%;
+}
+.cabecalho-central{
+    color: var(--cor-texto);
+    font-family: var(--fonte-principal);
+    align-items: center; /* Centraliza verticalmente */
+    padding-left: 1em;
+}
+.cabecalho-lista{
+    display: flex;
+    gap: 2em;
+    list-style: none; /* Remove os pontos da lista */
+}
+.cabecalho-lista-item{
+    text-decoration: none;
+    margin: 0;
+    font-size: 1.35em;
+}
+.cabecalho-lista-item a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: var(--cor-texto); /* Define a cor do texto para branco */
+}
+.cabecalho-lista-item a:hover{
+    color: rgb(182, 182, 116);
+    transition: color 0.3s ease
+}
+.cabecalho-lista-botao a{
+    background-color: rgb(100, 100, 35);
+    text-decoration: none;
+    color: var(--cor-texto);    
+    padding: 0.7em 2em;
+    font-size: 1.3em;
+}
+.cabecalho-lista-botao a:hover{
+    background-color: rgba(255, 255, 255, 0.829);
+    color: var(--cor-site);
+    transition: background-color 0.5s ease
+}
+.hamburguer-menu {
+    font-size: 1.5em;
+    cursor: pointer;
+    display: none;
+    color: var(--cor-texto);
+}
+
+@media screen and (max-width: 700px){
+        .cabecalho-central {
+            display: none;
+        }
+    
+        .cabecalho img {
+            margin: 0.25em 1.5em;
+            width: 100%;
+        }
+    
+        .hamburguer-menu {
+            display: block;
+            position: absolute;
+            top: 2.5%;
+            right: 8%;
+        }
+    
+        .cabecalho-lista {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;   
+            background-color: var(--cor-site);
+            width: 100%;
+            padding: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao menu */
+        }
+    
+        .hamburguer-menu.active + .cabecalho-lista {
+            display: flex;
+        }
+    }

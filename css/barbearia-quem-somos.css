@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Teko:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Salsa&display=swap');
+
+.quem-somos {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color: black;
+    padding: 8em;
+}
+.quem-somos-logo{
+    display: flex;
+    align-items: center;
+}
+.quem-somos-logo img{
+    width: 80%;
+    display: flex;
+}
+.quem-somos-descricao{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-right: 6em;
+}
+.quem-somos-descricao h1{
+    font-family: 'Teko', sans-serif;
+    font-size: 3em;
+}
+.quem-somos-descricao p{
+    font-family: 'Serif', sans-serif;
+    font-size: 1.5em;
+    text-align: justify;
+    line-height: 1.7;
+    padding-bottom: 1.2em;
+}
+.quem-somos-descricao a{
+    text-decoration: none;
+    background-color: white;
+    padding: .5em 1em;
+    color: black;
+    font-family: 'Teko';
+    font-size: 1.5em;
+}
+.quem-somos-descricao a:hover{
+    background-color: rgb(77, 77, 26);
+    color: white;
+    transition: background-color 0.3s ease
+}
+
+@media screen and (max-width: 700px){
+    .quem-somos img{
+        display: none;
+    }
+    .quem-somos {
+        display: flex;
+        padding: 2em;
+        text-align: center;
+    }
+    .quem-somos-descricao{
+        margin-right: 0;
+        text-align: left;
+    }
+    .quem-somos-descricao h1{
+        font-size: 1.5em;
+    }
+    .quem-somos-descricao p{
+        font-size: 1em;
+        line-height: 1.5;
+        
+        font-family: 'Salsa';
+        padding-bottom: 0.5em;
+    }
+    .quem-somos-descricao a{
+        font-size: 1em;
+    }
+}

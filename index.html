@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/barbearia-cabecalho.css">
+    <link rel="stylesheet" href="css/barbearia-carrossel.css">
+    <link rel="stylesheet" href="css/barbearia-quem-somos.css">
+    <link rel="stylesheet" href="css/barbearia-agende-seu-horario.css">
+    <link rel="stylesheet" href="css/barbearia-portfolio.css">
+    <link rel="stylesheet" href="css/barbearia-servicos.css">
+    <link rel="stylesheet" href="css/barbearia-rodape.css">
+    <link rel="stylesheet" href="css/barbearia-produtos.css">
+    <link rel="icon" href="img/img-favicon.png" type="image/x-icon">
+    <title>Guilherme Barber</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-esquerdo">
+            <a href="index.html">
+                <img src="img/Logo White - Sem Fundo.png" alt="logo-barbearia">
+            </a>
+        </div>
+        <div class="cabecalho-central">
+            <ul class="cabecalho-lista">
+                <li class="cabecalho-lista-item"><a href="#">A BARBEARIA</a></li>
+                <li class="cabecalho-lista-item"><a href="#">SERVIÇOS</a></li>
+                <li class="cabecalho-lista-item"><a href="#">PRODUTOS</a></li>
+                <li class="cabecalho-lista-item"><a href="#">CONTATO</a></li>
+                <li class="cabecalho-lista-item"><a href="#">BLOG</a></li>
+                <li class="cabecalho-lista-botao"><a href="#">AGENDE</a></li>
+            </ul>
+        </div>
+        <div class="hamburguer-menu active">&#9776;</div>
+    </header>
+    <main>
+        <section class="carrossel"> 
+            <!-- Slider main container -->
+            <div class="carrossel_conteiner">
+            <div class="swiper">
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <img src="img/Foto @andreeylucas_DSC0953.jpg" alt="corte-cabelo">
+                        <div class="texto-no-meio">GUILHERME BARBER</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/barbeador mágico.jpg" alt="barba">
+                        <div class="texto-no-meio">GUILHERME BARBER</div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/tesoura magica.jpg" alt="foto-tesoura">
+                        <div class="texto-no-meio">GUILHERME BARBER</div>
+                    </div>
+                </div>
+            
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+            <script>    
+                const swiper = new Swiper('.swiper', {
+                        spaceBetween: 0,
+                        slidesPerView: 1,
+                        pagination:{
+                            el: '.swiper-pagination',
+                            type: 'bullets',
+                        },
+                        autoplay: {
+                            delay: 6000,
+                        },
+                        speed: 800,
+                    });
+            </script>
+        </section>
+        <section class="quem-somos">
+            <div class="quem-somos-logo">
+                <a href="#"><img src="img/Logo White - Sem Fundo.png" alt=""></a>
+            </div>
+            <div class="quem-somos-descricao">
+                <h1>QUEM SOMOS</h1>
+                <p>A Guilherme Barber foi criada por Matheus Guilherme em 2023, fica localizada no bairro do Vasco da Gama, em Recife. <br>
+                    Estamos sempre trabalhando para lhe oferecer a melhor experiência!<br>
+                </p>
+                
+                <div><a href="#">FALE CONOSCO</a></div>
+            </div>
+        </section>
+        <section class="servicos"></section>
+        <section class="agende-seu-horario"></section>
+        <section class="portfolio"></section>
+        <section class="produtos"></section>
+    </main>
+    <footer class="rodape"></footer>
+    <script src="script.js"></script>
+</body>
+</html>

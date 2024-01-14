@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Teko:wght@300;400;500;600;700&display=swap');
+
+.swiper {
+    width: 100%;
+}
+.swiper-slide img{
+    width: 100%; /*Amplia a largura para ocupar 100% do espaço e não cortar as imagens.*/
+    height: 550px;
+}
+.swiper-button-prev, 
+.swiper-button-next{
+    display: none; /*Retira toda formatação da classe.*/
+}
+.carrossel_conteiner {
+    height: 550px; /* ou ajuste conforme necessário */
+}
+.texto-no-meio {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff; /* Cor do texto */
+    font-size: 5.5em; /* Tamanho do texto */
+    font-weight: bold; /* Peso da fonte */
+    background: rgba(0, 0, 0, 0.5); /* Adiciona um fundo ao texto */
+    padding: 10px; /* Adiciona um espaçamento interno ao redor do texto */
+    border-radius: 5px; /* Adiciona bordas arredondadas */
+    font-family: 'Teko', sans-serif;
+}
+
+
+@media screen and (max-width: 700px){
+    .swiper-slide img{
+        width: 100%; /*Amplia a largura para ocupar 100% do espaço e não cortar as imagens.*/
+        height: 200px;
+    }
+    .texto-no-meio{
+        font-size: 1.3em;
+        padding: 0 0.5em;
+    }
+    .carrossel_conteiner{
+        height: 200px;
+    }
+}
+
+    
