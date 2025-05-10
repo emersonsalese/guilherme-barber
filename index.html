@@ -16,71 +16,78 @@
     <title>Guilherme Barber</title>
 </head>
 <body>
+    <div id="preloader">
+        <div class="loader-container">
+          <img src="img/img-favicon.png" alt="Logo" class="logo-preloader" />
+          <div class="bolinhas">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
     <header class="cabecalho">
         <div class="cabecalho-esquerdo">
             <a href="index.html">
-                <img src="img/Logo White - Sem Fundo.png" alt="logo-barbearia">
+                <img src="img/img-favicon.png" alt="logo-barbearia">
             </a>
         </div>
         <div class="cabecalho-central">
             <ul class="cabecalho-lista">
+                <li class="botao-moderno"><a href="#">AGENDE<span class="seta">→</span></a></li>
                 <li class="cabecalho-lista-item"><a href="#">A BARBEARIA</a></li>
                 <li class="cabecalho-lista-item"><a href="#">SERVIÇOS</a></li>
                 <li class="cabecalho-lista-item"><a href="#">PRODUTOS</a></li>
                 <li class="cabecalho-lista-item"><a href="#">CONTATO</a></li>
                 <li class="cabecalho-lista-item"><a href="#">BLOG</a></li>
-                <li class="cabecalho-lista-botao"><a href="#">AGENDE</a></li>
             </ul>
         </div>
         <div class="hamburguer-menu active">&#9776;</div>
     </header>
     <main>
         <section class="carrossel"> 
-            <!-- Slider main container -->
             <div class="carrossel_conteiner">
-            <div class="swiper">
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-                        <img src="img/Foto @andreeylucas_DSC0953.jpg" alt="corte-cabelo">
-                        <div class="texto-no-meio">GUILHERME BARBER</div>
+                <div class="swiper">
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/Foto @andreeylucas_DSC0953.jpg" alt="corte-cabelo">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/barbeador mágico.jpg" alt="barba">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="img/tesoura magica.jpg" alt="foto-tesoura">
+                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img src="img/barbeador mágico.jpg" alt="barba">
-                        <div class="texto-no-meio">GUILHERME BARBER</div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/tesoura magica.jpg" alt="foto-tesoura">
-                        <div class="texto-no-meio">GUILHERME BARBER</div>
-                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-            
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="logo-central">
+                    <img src="img/image.png" alt="Logo Guilherme Barber">
+                </div>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
             <script>    
                 const swiper = new Swiper('.swiper', {
-                        spaceBetween: 0,
-                        slidesPerView: 1,
-                        pagination:{
-                            el: '.swiper-pagination',
-                            type: 'bullets',
-                        },
-                        autoplay: {
-                            delay: 6000,
-                        },
-                        speed: 800,
-                    });
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true, // Faz a imagem sair e a próxima entrar suavemente
+                },  
+                spaceBetween: 0,
+                slidesPerView: 1,
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                },
+                autoplay: {
+                    delay: 6000,
+                },
+                speed: 1500, // Mais lento (1.5s de transição)
+            });
             </script>
         </section>
         <section class="quem-somos">
             <div class="quem-somos-logo">
-                <a href="#"><img src="img/Logo White - Sem Fundo.png" alt=""></a>
+                <a href="#"><img src="img/image.png" alt=""></a>
             </div>
             <div class="quem-somos-descricao">
                 <h1>QUEM SOMOS</h1>
@@ -98,5 +105,18 @@
     </main>
     <footer class="rodape"></footer>
     <script src="script.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+        // Aguardar 5 segundos antes de iniciar a transição do preloader
+        setTimeout(function() {
+            document.getElementById('preloader').style.opacity = '0'; // Inicia a transição de opacidade
+        }, 2000); // 2 segundos de espera
+        
+        // Depois de 6 segundos, garantir que o preloader seja removido completamente da página
+        setTimeout(function() {
+            document.getElementById('preloader').style.display = 'none'; // Esconde o preloader
+        }, 6000); // Após a transição de 1 segundo
+        });
+    </script>
 </body>
 </html>
