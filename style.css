@@ -291,7 +291,7 @@
 
   .cabecalho img { /* Logo */
     width: auto; /* Para manter proporção com a altura */
-    height: 40px; /* Defina uma altura para o logo, ex: 40px-50px */
+    height: 60px; /* Defina uma altura para o logo, ex: 40px-50px */
     margin: 0; /* Removido margin, o padding do .cabecalho controla o espaçamento */
     display: block; /* Remove espaço extra abaixo da imagem */
   }
