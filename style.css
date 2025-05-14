@@ -25,6 +25,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 /* Preloader */
 #preloader {
@@ -230,9 +231,10 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza os links */
+  align-items: center; 
   padding: 2em 0;
-  gap: 1.8em; /* Espaçamento entre os links */
+  /* Ajuste aqui para diminuir o espaçamento */
+  gap: 1em; /* Anteriormente estava 1.8em. Você pode testar valores como 0.8em, 1em, 1.2em etc. */
   width: 100%;
 }
 
@@ -271,12 +273,11 @@
 
 @media (max-width: 768px) {
   .cabecalho {
-    /* Usar Flexbox para alinhar logo e hambúrguer */
     display: flex;
-    justify-content: space-between; /* Logo à esquerda, hambúrguer à direita */
+    justify-content: space-between; 
     align-items: center;
-    padding: 0.75em 1em; /* Ajuste no padding vertical e horizontal */
-    /* grid-template-columns e place-items removidos em favor do flex */
+    /* Ajuste o padding lateral aqui (o segundo valor) */
+    padding: 0.75em 1.5em; /* Anteriormente era 0.75em 1em. Tente 1.5em ou 2em. */
   }
 
   .cabecalho-central {
