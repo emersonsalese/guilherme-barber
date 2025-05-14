@@ -255,7 +255,7 @@
 
 /* Ícone do Hambúrguer */
 .hamburguer-menu {
-  font-size: 1.8em; /* Tamanho do ícone */
+  font-size: 2.3em; /* Tamanho do ícone */
   cursor: pointer;
   display: none; /* Será 'block' na media query */
   color: var(--cor-texto);
@@ -267,7 +267,7 @@
 
 /* Estilo para o hamburguer ativo (quando o menu está aberto) */
 .hamburguer-menu.active {
-  color: var(--cor-botao-hover); /* Muda a cor do ícone para indicar estado ativo */
+  color: var(--cor-botao-borda); /* Muda a cor do ícone para indicar estado ativo */
 }
 /* Responsivo */
 
