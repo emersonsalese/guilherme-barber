@@ -231,10 +231,8 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: right; 
   padding: 2em 0;
-  /* Ajuste aqui para diminuir o espaçamento */
-  gap: 1em; /* Anteriormente estava 1.8em. Você pode testar valores como 0.8em, 1em, 1.2em etc. */
   width: 100%;
 }
 
@@ -277,7 +275,7 @@
     justify-content: space-between; 
     align-items: center;
     /* Ajuste o padding lateral aqui (o segundo valor) */
-    padding: 0.75em 1.5em; /* Anteriormente era 0.75em 1em. Tente 1.5em ou 2em. */
+    padding: 0 1.5em; /* Anteriormente era 0.75em 1em. Tente 1.5em ou 2em. */
   }
 
   .cabecalho-central {
