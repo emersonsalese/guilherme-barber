@@ -1,0 +1,601 @@
+/* --------------------------------------------------------Cabeçalho-------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Teko:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Cores principais */
+  --cor-texto: #ffffff;
+  --cor-site: #000000;
+  --cor-botao-texto: #666666;
+  --cor-botao-borda: #cccccc;
+  --cor-botao-hover: #00AEEF;
+  --cor-botao-hover-fundo: rgba(0, 174, 239, 0.08);
+
+  /* Cores de fundo e efeitos */
+  --cor-cabecalho-bg: rgba(0, 0, 0, 0.4);
+  --cor-cabecalho-sombra: rgba(0, 0, 0, 0.3);
+  --cor-mobile-menu-bg: var(--cor-site);
+  --cor-mobile-menu-sombra: rgba(0, 0, 0, 0.1);
+
+  /* Fontes */
+  --fonte-principal: 'Teko', sans-serif;
+  --fonte-destaque: 'Fjalla One', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+/* Preloader */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cor-site);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease-out; /* Transição suave de opacidade */
+}
+  
+.loader-container {
+  text-align: center;
+}
+  
+.logo-preloader {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: pulse 1.8s infinite;
+}
+  
+.bolinhas {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+  margin-top: 20px;
+}
+  
+.bolinhas span {
+  width: 10px;
+  height: 10px;
+  background-color: var(--cor-texto);
+  border-radius: 50%;
+  animation: pular 0.6s infinite ease-in-out;
+}
+  
+.bolinhas span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+.bolinhas span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+  
+@keyframes pular {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.whatsapp-fixo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-fixo:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-fixo img {
+  width: 40px;
+  height: 40px;
+}
+.cabecalho {
+  background-color: var(--cor-cabecalho-bg);
+  backdrop-filter: blur(4px);
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  place-items: left;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1001; /* Aumentado para ficar sobre o menu mobile */
+  box-shadow: 0 2px 6px var(--cor-cabecalho-sombra);
+}
+
+.cabecalho img {
+  width: 8%;
+  height: auto;
+  margin: 1.5% 0 1.5% 15%;
+  transition: transform 0.3s ease;
+}
+
+.cabecalho img:hover {
+  transform: scale(1.1);
+}
+
+.cabecalho-central {
+  color: var(--cor-texto);
+  font-family: var(--fonte-principal);
+  padding-right: 15%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cabecalho-lista {
+  display: flex;
+  gap: 2em;
+  list-style: none;
+}
+
+.cabecalho-lista-item {
+  text-decoration: none;
+  margin: 0;
+  font-size: 1.35em;
+}
+
+.cabecalho-lista-item a {
+  text-decoration: none;
+  color: var(--cor-texto);
+}
+
+.cabecalho-lista-item a:hover {
+  color: var(--cor-botao-hover);
+  transition: color 0.5s ease;
+}
+
+.hamburguer-menu {
+  font-size: 1.5em;
+  cursor: pointer;
+  display: none;
+  color: var(--cor-texto);
+}
+
+/* Botão moderno */
+.botao-moderno a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em 1.8em;
+  border: 2px solid var(--cor-botao-borda);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--cor-botao-borda);
+  font-family: var(--fonte-destaque);
+  font-size: 1em;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.botao-moderno a:hover {
+  border-color: var(--cor-botao-hover);
+  color: var(--cor-botao-hover);
+  background-color: var(--cor-botao-hover-fundo);
+}
+
+.botao-moderno .seta {
+  transition: transform 0.3s ease;
+}
+
+.botao-moderno a:hover .seta {
+  transform: translateX(6px);
+}
+
+/* Menu Mobile Otimizado */
+.menu-mobile {
+  display: flex; /* Para centralizar a lista de links verticalmente */
+  flex-direction: column;
+  justify-content: center; /* Centraliza os itens do menu */
+  position: fixed;
+  top: 0; /* Alinha ao topo */
+  right: 0;
+  width: 80%; /* Ocupa 80% da largura da tela */
+  max-width: 320px; /* Largura máxima para telas maiores de celular */
+  height: 100vh; /* Ocupa toda a altura da tela */
+  background-color: var(--cor-mobile-menu-bg);
+  z-index: 1000; /* Abaixo do cabeçalho, mas acima do conteúdo da página */
+  box-shadow: -3px 0 8px var(--cor-mobile-menu-sombra); /* Sombra à esquerda do menu */
+  
+  /* Estado inicial (escondido fora da tela à direita) */
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out, visibility 0s linear 0.35s;
+}
+
+.menu-mobile.aberto { /* Classe adicionada via JavaScript */
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+}
+
+.cabecalho-lista-mobile {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os links */
+  padding: 2em 0;
+  gap: 1.8em; /* Espaçamento entre os links */
+  width: 100%;
+}
+
+.cabecalho-lista-mobile li a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  font-family: var(--fonte-principal);
+  font-size: 1.7em; /* Tamanho de fonte ligeiramente maior */
+  padding: 0.6em 1em; /* Melhor área de toque */
+  display: block;
+  text-align: center;
+  transition: color 0.3s ease; /* Já presente, mantido */
+}
+
+.cabecalho-lista-mobile li a:hover {
+  color: var(--cor-botao-hover);
+}
+
+/* Ícone do Hambúrguer */
+.hamburguer-menu {
+  font-size: 1.8em; /* Tamanho do ícone */
+  cursor: pointer;
+  display: none; /* Será 'block' na media query */
+  color: var(--cor-texto);
+  padding: 0.4em 0.6em; /* Aumenta a área de toque */
+  z-index: 1002; /* Garante que o botão do hambúrguer esteja acima de tudo */
+  position: relative; /* Para o z-index funcionar corretamente */
+  transition: color 0.3s ease; /* Para transição de cor ao ativar */
+}
+
+/* Estilo para o hamburguer ativo (quando o menu está aberto) */
+.hamburguer-menu.active {
+  color: var(--cor-botao-hover); /* Muda a cor do ícone para indicar estado ativo */
+}
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .cabecalho {
+    /* Usar Flexbox para alinhar logo e hambúrguer */
+    display: flex;
+    justify-content: space-between; /* Logo à esquerda, hambúrguer à direita */
+    align-items: center;
+    padding: 0.75em 1em; /* Ajuste no padding vertical e horizontal */
+    /* grid-template-columns e place-items removidos em favor do flex */
+  }
+
+  .cabecalho-central {
+    display: none;
+  }
+
+  .hamburguer-menu {
+    display: block;
+    /* padding-right: 1em; /* Removido, padding já definido na regra principal do .hamburguer-menu */
+  }
+
+  .cabecalho img { /* Logo */
+    width: auto; /* Para manter proporção com a altura */
+    height: 40px; /* Defina uma altura para o logo, ex: 40px-50px */
+    margin: 0; /* Removido margin, o padding do .cabecalho controla o espaçamento */
+    display: block; /* Remove espaço extra abaixo da imagem */
+  }
+}
+
+/* --------------------------------------------------------Carrossel-------------------------------------------------------------*/
+/*Seção 1*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Teko:wght@300;400;500;600;700&display=swap');
+
+.carrossel_conteiner {
+    height: 700px;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-wrapper,
+.swiper-slide {
+    height: 100%;
+}
+
+.swiper-slide {
+    position: relative;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 0;
+}
+
+.swiper-slide::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* sombra escura */
+    z-index: 1;
+}
+
+.swiper-button-prev, 
+.swiper-button-next {
+    display: none;
+}
+.logo-central {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.logo-central img {
+    max-width: 800px;
+    height: auto;
+    filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+}
+
+/* Responsivo */
+@media screen and (max-width: 700px) {
+    .logo-central img {
+        max-width: 120px;
+    }
+    .carrossel_conteiner {
+        height: 200px;
+    }
+}
+/* ---------------------------------------------------------Serviços-------------------------------------------------------------*/
+.servicos {
+  background: #121212;
+  padding: 5rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.titulo-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.titulo-servicos {
+  font-size: 6rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: Teko;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* --------------------------------------------------------Sobre nós-------------------------------------------------------------*/
+.secao-com-fundo {
+  background-image: url('img/pexels-zvolskiy-1570807.jpg'); /* Substituir pelo caminho real */
+  background-size: cover;
+  background-position: center;
+  padding: 0; /* sem padding para as caixas ficarem coladas à borda, se quiser */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* altura total da tela */
+}
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 100%;
+  max-width: 800px;
+  height: 80vh; /* ajustável conforme quiser */
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.6); /* cor de fundo semitransparente */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fonte-principal);
+  font-size: 1.5rem;
+  border: 1px solid #333; /* opcional para separar visualmente */
+}
+.card-sobre {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1.5rem;
+  text-align: left;
+  gap: 1rem;
+  padding:1.5em 2em;
+}
+
+.card-sobre h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.card-sobre p {
+  font-size: 20px;
+  line-height: 1.8;
+}
+/* --------------------------------------------------------Avaliações----------------------------------------------------*/
+
+.avaliacoes {
+  background-color: #2c2f36;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.avaliacoes h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.avaliacoes-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.avaliacao-card {
+  background-color: #1e1f22;
+  padding: 1.5rem 2rem;
+  max-width: 300px;
+  border-radius: 8px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.avaliacao-card .aspas {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: #888;
+}
+
+.avaliacao-card .texto {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+}
+
+.avaliacao-card .autor {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #ccc;
+} 
+/* --------------------------------------------------------Formulário----------------------------------------------------*/
+
+.contato {
+  background: linear-gradient(to right, #000000 70%, #0a1a40);
+  padding: 4rem 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.contato h2 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  font-family: TEKO;
+}
+
+.contato p {
+  color: #ccc;
+  margin-bottom: 2rem;
+  font-family: TEKO;
+  font-size: 1.2em;
+}
+
+#form-agendamento {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-row input {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 120px;
+}
+
+button {
+  background-color: #25D366;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1ebe5b;
+}
+select, input[type="date"] {
+  flex: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #000;
+}
+/* --------------------------------------------------------Footer----------------------------------------------------*/
+.site-footer {
+  background-color: #0d0d0d;
+  color: #ccc;
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
