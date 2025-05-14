@@ -4,14 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="css/barbearia-cabecalho.css">
-    <link rel="stylesheet" href="css/barbearia-carrossel.css">
-    <link rel="stylesheet" href="css/barbearia-quem-somos.css">
-    <link rel="stylesheet" href="css/barbearia-agende-seu-horario.css">
-    <link rel="stylesheet" href="css/barbearia-portfolio.css">
-    <link rel="stylesheet" href="css/barbearia-servicos.css">
-    <link rel="stylesheet" href="css/barbearia-rodape.css">
-    <link rel="stylesheet" href="css/barbearia-produtos.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/img-favicon.png" type="image/x-icon">
     <title>Guilherme Barber</title>
 </head>
@@ -23,7 +16,10 @@
             <span></span><span></span><span></span>
           </div>
         </div>
-      </div>
+    </div>
+    <a href="https://wa.me/+558182250855" class="whatsapp-fixo" target="_blank" aria-label="Fale conosco no WhatsApp">
+  <img src="img/whatsapp.png" alt="WhatsApp">
+</a>
     <header class="cabecalho">
         <div class="cabecalho-esquerdo">
             <a href="index.html">
@@ -42,6 +38,65 @@
         </div>
         <div class="hamburguer-menu active">&#9776;</div>
     </header>
+    <nav class="menu-mobile">
+        <ul class="cabecalho-lista-mobile">
+            <li><a href="#">AGENDE</a></li>
+            <li><a href="#">A BARBEARIA</a></li>
+            <li><a href="#">SERVIÇOS</a></li>
+            <li><a href="#">PRODUTOS</a></li>
+            <li><a href="#">CONTATO</a></li>
+            <li><a href="#">BLOG</a></li>
+        </ul>
+    </nav>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        // Lógica do Preloader
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            window.addEventListener('load', () => {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 1000); // Deve corresponder à duração da transição CSS (1s)
+            });
+        }
+
+        // Lógica do Menu Mobile
+        const hamburgerMenu = document.querySelector('.hamburguer-menu');
+        const menuMobile = document.querySelector('.menu-mobile');
+        const body = document.body;
+
+        if (hamburgerMenu && menuMobile) {
+            hamburgerMenu.addEventListener('click', () => {
+            menuMobile.classList.toggle('aberto');
+            // Adiciona/remove a classe 'active' no ícone do hambúrguer
+            hamburgerMenu.classList.toggle('active'); 
+
+            // Altera o ícone do hambúrguer para 'X' e vice-versa
+            if (menuMobile.classList.contains('aberto')) {
+                hamburgerMenu.innerHTML = '&#10005;'; // Ícone 'X' (alternativa: &times;)
+                body.style.overflow = 'hidden'; // Impede o scroll da página quando o menu está aberto
+            } else {
+                hamburgerMenu.innerHTML = '&#9776;'; // Ícone hambúrguer (☰)
+                body.style.overflow = ''; // Permite o scroll da página
+            }
+            });
+
+            // Opcional: Fechar o menu ao clicar em um link (para SPAs ou navegação na mesma página)
+            const menuLinks = menuMobile.querySelectorAll('a');
+            menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (menuMobile.classList.contains('aberto')) {
+                menuMobile.classList.remove('aberto');
+                hamburgerMenu.classList.remove('active');
+                hamburgerMenu.innerHTML = '&#9776;';
+                body.style.overflow = '';
+                }
+            });
+            });
+        }
+        });
+        </script>
     <main>
         <section class="carrossel"> 
             <div class="carrossel_conteiner">
@@ -49,20 +104,20 @@
                     <div class="swiper-pagination"></div>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <img src="img/Foto @andreeylucas_DSC0953.jpg" alt="corte-cabelo">
+                            <img src="img/img_corte_detalhado.jpg" alt="corte-cabelo">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/barbeador mágico.jpg" alt="barba">
+                            <img src="img/img_barbeador.jpg" alt="barba">
                         </div>
                         <div class="swiper-slide">
-                            <img src="img/tesoura magica.jpg" alt="foto-tesoura">
+                            <img src="img/img_tesoura.jpg" alt="foto-tesoura">
                         </div>
                     </div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
                 <div class="logo-central">
-                    <img src="img/image.png" alt="Logo Guilherme Barber">
+                    <img src="img/logo_branca.png" alt="Logo Guilherme Barber">
                 </div>
             </div>
             <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -85,37 +140,175 @@
             });
             </script>
         </section>
-        <section class="quem-somos">
-            <div class="quem-somos-logo">
-                <a href="#"><img src="img/image.png" alt=""></a>
-            </div>
-            <div class="quem-somos-descricao">
-                <h1>QUEM SOMOS</h1>
-                <p>A Guilherme Barber foi criada por Matheus Guilherme em 2023, fica localizada no bairro do Vasco da Gama, em Recife. <br>
-                    Estamos sempre trabalhando para lhe oferecer a melhor experiência!<br>
-                </p>
-                
-                <div><a href="#">FALE CONOSCO</a></div>
+        <section class="servicos">
+        <div class="titulo-container">
+            <h2 class="titulo-servicos">SERVIÇOS</h2>
+        </div>
+        <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animar');
+            }
+            });
+        });
+
+        const titulo = document.querySelector('.titulo-servicos');
+        observer.observe(titulo);
+        </script>
+        </section>
+        <section class="secao-com-fundo">
+            <div class="grid-cards">
+                <div class="card card-sobre">
+                    <h2>SOBRE NÓS</h2>
+                    <p>
+                        Somos uma empresa especializada em soluções criativas, com foco em design, desenvolvimento web e inovação digital. Nosso objetivo é transformar ideias em experiências impactantes.
+                    </p>
+                </div>
+                <div class="card">Caixa 2</div>
+                <div class="card">Caixa 3</div>
+                <div class="card">Caixa 4</div>
             </div>
         </section>
-        <section class="servicos"></section>
-        <section class="agende-seu-horario"></section>
-        <section class="portfolio"></section>
-        <section class="produtos"></section>
+        <section class="avaliacoes">
+        <h2>O que dizem nossos clientes</h2>
+        <div class="avaliacoes-grid">
+            <div class="avaliacao-card">
+            <p class="aspas">“</p>
+            <p class="texto">
+                Barbearia top, corto e recomendo a todos.
+            </p>
+            <p class="autor">— Emerson Sales</p>
+            </div>
+            <div class="avaliacao-card">
+            <p class="aspas">“</p>
+            <p class="texto">
+                Profissional excelente, corta muito bem.
+            </p>
+            <p class="autor">— Gabriel Vasconcelos</p>
+            </div>
+            <div class="avaliacao-card">
+            <p class="aspas">“</p>
+            <p class="texto">
+                Um dos melhores barbeiros do Vasco. No precinho! Profissional carismático e gentil. Me senti muito bem e voltarei mais vezes.
+            </p>
+            <p class="autor">— Andrey Silva</p>
+            </div>
+            <div class="avaliacao-card">
+            <p class="aspas">“</p>
+            <p class="texto">
+                Atendimento e corte bom demais!!!!!
+            </p>
+            <p class="autor">— André Bastos</p>
+            </div>
+            <div class="avaliacao-card">
+            <p class="aspas">“</p>
+            <p class="texto">
+                Top demaisss
+            </p>
+            <p class="autor">— Willians Juliano</p>
+            </div>
+            <div class="avaliacao-card">
+            <p class="aspas">“</p>
+            <p class="texto">
+                Profissional excelente!!
+            </p>
+            <p class="autor">— Rafaela Silva</p>
+            </div>
+        </div>
+        </section>
+        <section class="contato">
+        <h2>Agende seu horário</h2>
+        <p>Preencha os dados abaixo e envie seu agendamento pelo WhatsApp</p>
+        <form id="form-agendamento">
+            <div class="form-row">
+            <input type="text" name="nome" placeholder="Seu nome" required>
+
+            <select name="servico" required>
+                <option value="" disabled selected>Serviço</option>
+                <option value="Corte Masculino">Corte Masculino</option>
+                <option value="Barba">Barba</option>
+                <option value="Corte + Barba">Corte + Barba</option>
+                <option value="Sobrancelha">Sobrancelha</option>
+                <option value="Pigmentação">Pigmentação</option>
+            </select>
+
+            <input type="date" name="data" required>
+
+            <select name="horario" required>
+                <option value="" disabled selected>Horário</option>
+                <option value="08:00">08:00</option>
+                <option value="08:30">08:30</option>
+                <option value="09:00">09:00</option>
+                <option value="09:30">09:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30">10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="11:30">11:30</option>
+                <option value="13:00">13:00</option>
+                <option value="13:30">13:30</option>
+                <option value="14:00">14:00</option>
+                <option value="14:30">14:30</option>
+                <option value="15:00">15:00</option>
+                <option value="15:30">15:30</option>
+                <option value="16:00">16:00</option>
+                <option value="16:30">16:30</option>
+                <option value="17:00">17:00</option>
+                <option value="17:30">17:30</option>
+                <option value="18:00">18:00</option>
+                <option value="18:30">18:30</option>
+            </select>
+            </div>
+
+            <textarea name="mensagem" placeholder="Mensagem adicional (opcional)"></textarea>
+            <button type="submit">Enviar para o WhatsApp</button>
+        </form>
+        </section>
     </main>
-    <footer class="rodape"></footer>
+    <footer class="site-footer">
+    <div class="footer-content">
+        <p>&copy; 2025 Guilherme Barber. Todos os direitos reservados.</p>
+        <div class="footer-links">
+        <a href="#servicos">Serviços</a>
+        <a href="#agendamentos">Agendamentos</a>
+        <a href="#contato">Contato</a>
+        </div>
+    </div>
+    </footer>
     <script src="script.js"></script>
     <script>
-        window.addEventListener('load', function() {
-        // Aguardar 5 segundos antes de iniciar a transição do preloader
-        setTimeout(function() {
-            document.getElementById('preloader').style.opacity = '0'; // Inicia a transição de opacidade
-        }, 2000); // 2 segundos de espera
-        
-        // Depois de 6 segundos, garantir que o preloader seja removido completamente da página
-        setTimeout(function() {
-            document.getElementById('preloader').style.display = 'none'; // Esconde o preloader
-        }, 6000); // Após a transição de 1 segundo
+        window.addEventListener('load', function () {
+        const preloader = document.getElementById('preloader');
+
+        // Aguarda só 500ms após carregamento, só para suavidade
+        setTimeout(function () {
+        preloader.style.opacity = '0'; // Inicia fade-out
+        }, 1000);
+
+        // Após a transição CSS de 1s, remove o elemento
+        setTimeout(function () {
+        preloader.style.display = 'none';
+        }, 2000);
+        });
+        document.getElementById('form-agendamento').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nome = e.target.nome.value;
+            const servico = e.target.servico.value;
+            const data = e.target.data.value;
+            const horario = e.target.horario.value;
+            const mensagem = e.target.mensagem.value;
+
+            const texto = `Olá! Gostaria de agendar um horário.%0A
+        Nome: ${nome}%0A
+        Serviço: ${servico}%0A
+        Data: ${data}%0A
+        Horário: ${horario}%0A
+        Mensagem: ${mensagem}`;
+
+            const numeroWhatsApp = "5581982250855"; // Seu número com DDI + DDD
+            const link = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
+            window.open(link, '_blank');
         });
     </script>
 </body>
