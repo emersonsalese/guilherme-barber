@@ -202,18 +202,19 @@
 .menu-mobile {
   display: flex; /* Para centralizar a lista de links verticalmente */
   flex-direction: column;
-  justify-content: center; /* Centraliza os itens do menu */
+  justify-content: flex-start;
+  align-items: flex-end; 
+  padding-top: 5em; /* Empurra os itens para baixo do cabeçalho */
+  padding-right: 2em; /* Dá espaço da borda direita */
   position: fixed;
   top: 0; /* Alinha ao topo */
   right: 0;
-  width: 80%; /* Ocupa 80% da largura da tela */
+  width: 55%; /* Ocupa 80% da largura da tela */
   max-width: 320px; /* Largura máxima para telas maiores de celular */
   height: 100vh; /* Ocupa toda a altura da tela */
   background-color: var(--cor-mobile-menu-bg);
   z-index: 1000; /* Abaixo do cabeçalho, mas acima do conteúdo da página */
   box-shadow: -3px 0 8px var(--cor-mobile-menu-sombra); /* Sombra à esquerda do menu */
-  
-  /* Estado inicial (escondido fora da tela à direita) */
   transform: translateX(100%);
   opacity: 0;
   visibility: hidden;
@@ -231,8 +232,8 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: right; 
-  padding: 2em 0;
+  align-items: flex-end; 
+  padding: 0;
   width: 100%;
 }
 
@@ -241,9 +242,9 @@
   text-decoration: none;
   font-family: var(--fonte-principal);
   font-size: 1.7em; /* Tamanho de fonte ligeiramente maior */
-  padding: 0.6em 1em; /* Melhor área de toque */
+  padding: 0.4em 0; /* Melhor área de toque */
   display: block;
-  text-align: center;
+  text-align: right;
   transition: color 0.3s ease; /* Já presente, mantido */
 }
 
@@ -359,10 +360,10 @@
 /* Responsivo */
 @media screen and (max-width: 700px) {
     .logo-central img {
-        max-width: 120px;
+        max-width: 400px;
     }
     .carrossel_conteiner {
-        height: 200px;
+        height: 500px;
     }
 }
 /* ---------------------------------------------------------Serviços-------------------------------------------------------------*/
