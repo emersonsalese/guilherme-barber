@@ -18,8 +18,8 @@
         </div>
     </div>
     <a href="https://wa.me/+558182250855" class="whatsapp-fixo" target="_blank" aria-label="Fale conosco no WhatsApp">
-  <img src="img/whatsapp.png" alt="WhatsApp">
-</a>
+        <img src="img/whatsapp.png" alt="WhatsApp">
+    </a>
     <header class="cabecalho">
         <div class="cabecalho-esquerdo">
             <a href="index.html">
@@ -29,11 +29,10 @@
         <div class="cabecalho-central">
             <ul class="cabecalho-lista">
                 <li class="botao-moderno"><a href="#">AGENDE<span class="seta">→</span></a></li>
-                <li class="cabecalho-lista-item"><a href="#">A BARBEARIA</a></li>
                 <li class="cabecalho-lista-item"><a href="#">SERVIÇOS</a></li>
-                <li class="cabecalho-lista-item"><a href="#">PRODUTOS</a></li>
-                <li class="cabecalho-lista-item"><a href="#">CONTATO</a></li>
-                <li class="cabecalho-lista-item"><a href="#">BLOG</a></li>
+                <li class="cabecalho-lista-item"><a href="#">A BARBEARIA</a></li>
+                <li class="cabecalho-lista-item"><a href="#">AVALIAÇÕES</a></li>
+                <li class="cabecalho-lista-item"><a href="https://wa.me/+558182250855">CONTATO</a></li>
             </ul>
         </div>
         <div class="hamburguer-menu active">&#9776;</div>
@@ -141,22 +140,35 @@
             </script>
         </section>
         <section class="servicos">
-        <div class="titulo-container">
-            <h2 class="titulo-servicos">SERVIÇOS</h2>
-        </div>
-        <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animar');
-            }
-            });
-        });
-
-        const titulo = document.querySelector('.titulo-servicos');
-        observer.observe(titulo);
-        </script>
+            <h1>NOSSOS SERVIÇOS</h1>
+            <div class="cards">
+            <div class="card">
+                <i class="fas fa-cut"></i>
+                <h3>Cabelo</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-beard"></i>
+                <h3>Barba</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-scissors"></i>
+                <h3>Acabamento</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-sun"></i>
+                <h3>Platinado</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-water"></i>
+                <h3>Pigmentação</h3>
+            </div>
+            <div class="card">
+                <i class="fas fa-eye"></i>
+                <h3>Sobrancelha</h3>
+            </div>
+            </div>
         </section>
+
         <section class="secao-com-fundo">
             <div class="grid-cards">
                 <div class="card card-sobre">
@@ -268,11 +280,6 @@
     <footer class="site-footer">
     <div class="footer-content">
         <p>&copy; 2025 Guilherme Barber. Todos os direitos reservados.</p>
-        <div class="footer-links">
-        <a href="#servicos">Serviços</a>
-        <a href="#agendamentos">Agendamentos</a>
-        <a href="#contato">Contato</a>
-        </div>
     </div>
     </footer>
     <script src="script.js"></script>
