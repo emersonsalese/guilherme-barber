@@ -213,7 +213,7 @@ html {
   position: fixed;
   top: 0; /* Alinha ao topo */
   right: 0;
-  width: 55%; /* Ocupa 80% da largura da tela */
+  width: 60%; /* Ocupa 80% da largura da tela */
   max-width: 320px; /* Largura máxima para telas maiores de celular */
   height: 100vh; /* Ocupa toda a altura da tela */
   background-color: var(--cor-mobile-menu-bg);
@@ -634,6 +634,12 @@ select, input[type="date"] {
   font-size: 1rem;
   background-color: #fff;
   color: #000;
+}
+
+@media (max-width: 768px){
+  .contato h2 {
+    font-size: 3.5rem;
+  }
 }
 /* --------------------------------------------------------Footer----------------------------------------------------*/
 .site-footer {
