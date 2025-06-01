@@ -704,3 +704,8 @@ select, input[type="date"] {
 .icone-rede-social-insta:hover{
   transform: scale(1.2);
 }
+@media (max-width: 768px){
+  .footer-content p{
+    font-size: 0.8em;
+  }
+}
