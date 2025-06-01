@@ -308,28 +308,33 @@
         });
 
         document.getElementById('form-agendamento').addEventListener('submit', function(e) {
-            e.preventDefault();
+        e.preventDefault();
 
             const nome = e.target.nome.value;
             const servico = e.target.servico.value;
-            const data = e.target.data.value;
+            const dataOriginal = e.target.data.value;
             const horario = e.target.horario.value;
             const mensagem = e.target.mensagem.value;
 
-            // Convertendo data de "aaaa-mm-dd" para "dd/mm/aaaa"
-            const [ano, mes, dia] = data.split("-");
+            // Converter data de "2025-06-12" para "12/06/2025"
+            const [ano, mes, dia] = dataOriginal.split("-");
             const dataFormatada = `${dia}/${mes}/${ano}`;
 
-            // Construindo a mensagem com quebra de linha %0A e data formatada
-            const texto = `Olá! Gostaria de agendar um horário.%0A` +
-                        `Nome: ${nome}%0A` +
-                        `Serviço: ${servico}%0A` +
-                        `Data: ${dataFormatada}%0A` +
-                        `Horário: ${horario}%0A` +
-                        `Mensagem: ${mensagem}`;
+            // Montar texto com quebras de linha
+            const texto = 
+            `Olá! Gostaria de agendar um horário.
+
+            Nome: ${nome}
+            Serviço: ${servico}
+            Data: ${dataFormatada}
+            Horário: ${horario}
+            Mensagem: ${mensagem}`;
+
+            // Codifica corretamente para uso em URL do WhatsApp
+            const textoCodificado = encodeURIComponent(texto);
 
             const numeroWhatsApp = "5581982250855"; // Seu número com DDI + DDD
-            const link = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+            const link = `https://wa.me/${numeroWhatsApp}?text=${textoCodificado}`;
             window.open(link, '_blank');
         });
     </script>
