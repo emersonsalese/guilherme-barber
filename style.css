@@ -22,6 +22,10 @@
   --fonte-destaque: 'Fjalla One', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -423,53 +427,83 @@
     }
 /* --------------------------------------------------------Sobre nós-------------------------------------------------------------*/
 .secao-com-fundo {
-  background-image: url('img/pexels-zvolskiy-1570807.jpg'); /* Substituir pelo caminho real */
+  background-image: url('img/pexels-zvolskiy-1570807.jpg');
   background-size: cover;
   background-position: center;
-  padding: 0; /* sem padding para as caixas ficarem coladas à borda, se quiser */
+  padding: 2rem 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* altura total da tela */
+  min-height: 100vh;
 }
 
 .grid-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   width: 100%;
-  max-width: 800px;
-  height: 80vh; /* ajustável conforme quiser */
+  max-width: 1000px;
+  gap: 1rem;
 }
 
 .card {
-  background-color: rgba(0, 0, 0, 0.6); /* cor de fundo semitransparente */
+  background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--fonte-principal);
   font-size: 1.5rem;
-  border: 1px solid #333; /* opcional para separar visualmente */
+  border: 1px solid #333;
+  padding: 2rem;
 }
+
 .card-sobre {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 1.5rem;
   text-align: left;
   gap: 1rem;
-  padding:1.5em 2em;
+  font-size: 1rem;
 }
 
 .card-sobre h2 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  color: #fff;
 }
 
 .card-sobre p {
-  font-size: 20px;
-  line-height: 1.8;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .grid-cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .card {
+    font-size: 1rem;
+  }
+
+  .card-sobre h2 {
+    font-size: 1.5rem;
+  }
+
+  .card-sobre p {
+    font-size: 0.95rem;
+  }
 }
 /* --------------------------------------------------------Avaliações----------------------------------------------------*/
 
