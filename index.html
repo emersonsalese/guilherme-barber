@@ -294,18 +294,19 @@
     <script src="script.js"></script>
     <script>
         window.addEventListener('load', function () {
-        const preloader = document.getElementById('preloader');
+            const preloader = document.getElementById('preloader');
 
-        // Aguarda só 500ms após carregamento, só para suavidade
-        setTimeout(function () {
-        preloader.style.opacity = '0'; // Inicia fade-out
-        }, 1000);
+            // Aguarda só 500ms após carregamento, só para suavidade
+            setTimeout(function () {
+                preloader.style.opacity = '0'; // Inicia fade-out
+            }, 1000);
 
-        // Após a transição CSS de 1s, remove o elemento
-        setTimeout(function () {
-        preloader.style.display = 'none';
-        }, 2000);
+            // Após a transição CSS de 1s, remove o elemento
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 2000);
         });
+
         document.getElementById('form-agendamento').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -315,17 +316,23 @@
             const horario = e.target.horario.value;
             const mensagem = e.target.mensagem.value;
 
-            const texto = `Olá! Gostaria de agendar um horário.%0A
-        Nome: ${nome}%0A
-        Serviço: ${servico}%0A
-        Data: ${data}%0A
-        Horário: ${horario}%0A
-        Mensagem: ${mensagem}`;
+            // Convertendo data de "aaaa-mm-dd" para "dd/mm/aaaa"
+            const [ano, mes, dia] = data.split("-");
+            const dataFormatada = `${dia}/${mes}/${ano}`;
+
+            // Construindo a mensagem com quebra de linha %0A e data formatada
+            const texto = `Olá! Gostaria de agendar um horário.%0A` +
+                        `Nome: ${nome}%0A` +
+                        `Serviço: ${servico}%0A` +
+                        `Data: ${dataFormatada}%0A` +
+                        `Horário: ${horario}%0A` +
+                        `Mensagem: ${mensagem}`;
 
             const numeroWhatsApp = "5581982250855"; // Seu número com DDI + DDD
-            const link = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
+            const link = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
             window.open(link, '_blank');
         });
     </script>
+
 </body>
 </html>
