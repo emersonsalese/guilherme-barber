@@ -1,343 +1,346 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <title>GUILHERME BARBER | Recife</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="img/img-favicon.png" type="image/x-icon">
-    <title>Guilherme Barber</title>
+    
 </head>
-<body>
-    <div id="preloader">
-        <div class="loader-container">
-          <img src="img/img-favicon.png" alt="Logo" class="logo-preloader" />
-          <div class="bolinhas">
-            <span></span><span></span><span></span>
-          </div>
+<body class="bg-neutral-950 text-neutral-300 antialiased selection:bg-white selection:text-black">
+    
+    <div class="noise-overlay"></div>
+
+    <!-- Top Bar Info -->
+    <div class="fixed top-0 left-0 w-full z-[60] bg-neutral-950 text-neutral-500 text-[10px] uppercase tracking-widest border-b border-white/5 px-6 py-2 flex justify-between items-center hidden md:flex">
+        <span>Recife - PE</span>
+        <span>Rua Vasco da Gama, 447</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-8 left-0 w-full z-50 px-6 py-4 md:px-12 flex justify-between items-center mix-blend-difference text-white">
+        <a href="#" class="text-lg md:text-xl tracking-tighter font-bold z-50 relative leading-none">
+            GUILHERME<br><span class="text-neutral-400 font-medium">BARBER</span>
+        </a>
+        
+        <div class="hidden md:flex gap-1 bg-white/5 backdrop-blur-md p-1 rounded-full border border-white/10">
+            <a href="#conceito" class="px-6 py-2 rounded-full text-xs font-medium tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300">Conceito</a>
+            <a href="#servicos" class="px-6 py-2 rounded-full text-xs font-medium tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300">Menu</a>
+            <a href="#contato" class="px-6 py-2 rounded-full text-xs font-medium tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300">Contato</a>
+        </div>
+
+        <!-- Magnetic Button Style -->
+        <a href="https://wa.me/5581982250855" target="_blank" class="hidden md:flex group relative overflow-hidden bg-white text-black px-8 py-3 rounded-sm font-bold text-xs uppercase tracking-widest items-center gap-2 hover:gap-4 transition-all duration-500">
+            <span class="relative z-10">Agendar</span>
+            <span class="iconify relative z-10 transition-transform duration-300 group-hover:-rotate-45" data-icon="lucide:arrow-right" data-width="16"></span>
+            <div class="absolute inset-0 bg-neutral-300 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+        </a>
+
+        <button class="md:hidden text-white border border-white/20 p-2 rounded-full">
+            <span class="iconify" data-icon="lucide:menu" data-width="20"></span>
+        </button>
+    </nav>
+
+    <!-- Side Vertical Text -->
+    <div class="fixed left-6 bottom-8 z-40 hidden md:block mix-blend-difference">
+        <span class="text-[10px] font-bold tracking-widest uppercase text-white rotate-180" style="writing-mode: vertical-rl;">Est. 2026</span>
+    </div>
+    <div class="fixed right-6 bottom-8 z-40 hidden md:flex flex-col gap-4 mix-blend-difference">
+         <a href="https://www.instagram.com/guilhermebarber97?igsh=M2liZW9mNGJtd201" class="text-white hover:text-neutral-400 transition-colors"><span class="iconify" data-icon="lucide:instagram" data-width="18"></span></a>
+         <a href="https://wa.me/5581982250855" class="text-white hover:text-neutral-400 transition-colors"><span class="iconify" data-icon="lucide:message-circle" data-width="18"></span></a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-32 pb-12 px-6 md:px-12 flex flex-col justify-between border-b border-white/10 bg-grid">
+        <!-- Abstract Background Shape -->
+        <div class="absolute top-1/4 right-0 w-[40vw] h-[60vh] bg-neutral-900 z-0 opacity-50 blur-sm grayscale">
+             <img src="https://images.unsplash.com/photo-1503951914875-452162b7f304?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover opacity-40 mix-blend-luminosity" alt="Barber Texture">
+        </div>
+
+        <div class="relative z-10 mt-auto">
+            <div class="mb-4 flex items-center gap-4 fade-in-up">
+                <span class="h-px w-12 bg-white/30"></span>
+                <span class="text-xs uppercase tracking-[0.2em] text-neutral-400">Vasco da Gama, Recife</span>
+            </div>
+            
+            <div class="flex flex-col">
+                <h1 class="text-[12vw] md:text-[9vw] leading-[0.8] tracking-tighter font-bold text-white mix-blend-exclusion reveal-text">
+                    VISUAL
+                </h1>
+                <div class="flex items-center gap-4 md:gap-8 reveal-text" style="transition-delay: 0.1s;">
+                    <h1 class="text-[12vw] md:text-[9vw] leading-[0.8] tracking-tighter font-bold text-neutral-600">
+                        MASCULINO
+                    </h1>
+                    <a href="https://wa.me/5581982250855" class="hidden md:flex h-24 w-24 rounded-full border border-neutral-700 bg-neutral-900/50 backdrop-blur-sm items-center justify-center group cursor-pointer hover:border-white transition-colors duration-500">
+                        <span class="iconify text-white transform group-hover:rotate-45 transition-transform duration-500" data-icon="lucide:arrow-up-right" data-width="32"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-white/10 pt-8 mt-12 fade-in-up" style="transition-delay: 0.3s;">
+            <p class="text-sm text-neutral-500 font-medium max-w-xs">
+                Especialistas em cortes clássicos e modernos, barboterapia e design visual.
+            </p>
+            <div class="md:col-span-2 flex justify-between items-end">
+                <div class="flex flex-col">
+                    <span class="text-xs text-neutral-600 uppercase tracking-widest mb-1">Contato</span>
+                    <span class="text-sm text-white font-mono">81 98225-0855</span>
+                </div>
+                <div class="flex gap-2">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                    <span class="text-xs text-neutral-400 uppercase tracking-widest">Aberto Agora</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee Info -->
+    <div class="border-b border-white/10 bg-neutral-900 py-4 overflow-hidden relative z-20">
+        <div class="marquee-container">
+            <div class="marquee-content text-xs font-bold tracking-[0.3em] uppercase text-neutral-400 flex gap-12 items-center">
+                <span>Rua Vasco da Gama, 447</span>
+                <span class="w-1 h-1 bg-neutral-600 rounded-full"></span>
+                <span>Recife - PE</span>
+                <span class="w-1 h-1 bg-neutral-600 rounded-full"></span>
+                <span>Agende pelo WhatsApp</span>
+                <span class="w-1 h-1 bg-neutral-600 rounded-full"></span>
+                <span>Estilo & Precisão</span>
+                <span class="w-1 h-1 bg-neutral-600 rounded-full"></span>
+                <span>Guilherme Barber</span>
+                <span class="w-1 h-1 bg-neutral-600 rounded-full"></span>
+                <span>Rua Vasco da Gama, 447</span>
+                <span class="w-1 h-1 bg-neutral-600 rounded-full"></span>
+                <span>Recife - PE</span>
+            </div>
         </div>
     </div>
-    <a href="https://wa.me/5581982250855?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="whatsapp-fixo" target="_blank" aria-label="Fale conosco no WhatsApp">
-        <img src="img/whatsapp.png" alt="WhatsApp">
-    </a>
-    <header class="cabecalho">
-        <div class="cabecalho-esquerdo">
-            <a href="index.html">
-                <img src="img/img-favicon.png" alt="logo-barbearia">
-            </a>
-        </div>
-        <div class="cabecalho-central">
-            <ul class="cabecalho-lista">
-                <li class="botao-moderno"><a href="https://wa.me/5581982250855?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio.">AGENDE<span class="seta">→</span></a></li>
-                <li class="cabecalho-lista-item"><a href="#servicos">SERVIÇOS</a></li>
-                <li class="cabecalho-lista-item"><a href="#sobre_nos">A BARBEARIA</a></li>
-                <li class="cabecalho-lista-item"><a href="#avaliacoes">AVALIAÇÕES</a></li>
-                <li class="cabecalho-lista-item"><a href="#contato">CONTATO</a></li>
+
+    <!-- Concept Section (Dense Layout) -->
+    <section id="conceito" class="grid grid-cols-1 md:grid-cols-2 min-h-[80vh] border-b border-white/10">
+        <div class="relative border-b md:border-b-0 md:border-r border-white/10 p-8 md:p-16 flex flex-col justify-center">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+            
+            <span class="text-xs font-bold text-white uppercase tracking-widest border border-white/20 px-3 py-1 rounded-full w-fit mb-8 fade-in-up">Sobre Nós</span>
+            
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-8 leading-tight fade-in-up delay-100">
+                Excelência no<br>coração de Recife.
+            </h2>
+            
+            <p class="text-neutral-400 leading-relaxed mb-8 fade-in-up delay-200 text-sm md:text-base max-w-md">
+                Localizada no bairro Vasco da Gama, a Guilherme Barber não é apenas um lugar para cortar o cabelo. É um refúgio masculino onde a tradição da barbearia clássica encontra técnicas modernas. Nosso espaço foi desenhado para oferecer conforto, conversa boa e, acima de tudo, um serviço impecável.
+            </p>
+
+            <ul class="grid grid-cols-2 gap-4 mt-4 fade-in-up delay-300">
+                <li class="flex items-center gap-3 text-sm text-neutral-300 border border-white/5 bg-white/5 p-3 rounded-sm">
+                    <span class="iconify text-white" data-icon="lucide:award" data-width="18"></span>
+                    Profissionais Expert
+                </li>
+                <li class="flex items-center gap-3 text-sm text-neutral-300 border border-white/5 bg-white/5 p-3 rounded-sm">
+                    <span class="iconify text-white" data-icon="lucide:coffee" data-width="18"></span>
+                    Ambiente Climatizado
+                </li>
+                <li class="flex items-center gap-3 text-sm text-neutral-300 border border-white/5 bg-white/5 p-3 rounded-sm">
+                    <span class="iconify text-white" data-icon="lucide:music" data-width="18"></span>
+                    Música Ambiente
+                </li>
+                <li class="flex items-center gap-3 text-sm text-neutral-300 border border-white/5 bg-white/5 p-3 rounded-sm">
+                    <span class="iconify text-white" data-icon="lucide:wifi" data-width="18"></span>
+                    Wi-Fi Gratuito
+                </li>
             </ul>
         </div>
-        <div class="hamburguer-menu active">&#9776;</div>
-    </header>
-    <nav class="menu-mobile">
-        <ul class="cabecalho-lista-mobile">
-            <li><a href="https://wa.me/5581982250855?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio.">AGENDE</a></li>
-            <li><a href="#servicos">SERVIÇOS</a></li>
-            <li><a href="#sobre_nos">A BARBEARIA</a></li>
-            <li><a href="#avaliacoes">AVALIAÇÕES</a></li>
-            <li><a href="#contato">CONTATO</a></li>
-        </ul>
-    </nav>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        // Lógica do Preloader
-        const preloader = document.getElementById('preloader');
-        if (preloader) {
-            window.addEventListener('load', () => {
-            preloader.style.opacity = '0';
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 1000); // Deve corresponder à duração da transição CSS (1s)
-            });
-        }
+        
+        <div class="relative h-full min-h-[50vh] md:min-h-auto group overflow-hidden">
+             <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover grayscale transition-transform duration-1000 group-hover:scale-105" alt="Barber Shop Interior">
+             <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500"></div>
+             
+             <!-- Floating Badge -->
+             <div class="absolute bottom-8 right-8 bg-white text-black p-4 md:p-6 max-w-[200px] hidden md:block">
+                 <p class="text-xs font-bold uppercase tracking-wide leading-relaxed">
+                     "O melhor corte da região do Vasco da Gama."
+                 </p>
+                 <div class="mt-2 flex gap-1">
+                     <span class="iconify text-black" data-icon="lucide:star" data-width="12"></span>
+                     <span class="iconify text-black" data-icon="lucide:star" data-width="12"></span>
+                     <span class="iconify text-black" data-icon="lucide:star" data-width="12"></span>
+                     <span class="iconify text-black" data-icon="lucide:star" data-width="12"></span>
+                     <span class="iconify text-black" data-icon="lucide:star" data-width="12"></span>
+                 </div>
+             </div>
+        </div>
+    </section>
 
-        // Lógica do Menu Mobile
-        const hamburgerMenu = document.querySelector('.hamburguer-menu');
-        const menuMobile = document.querySelector('.menu-mobile');
-        const body = document.body;
+    <!-- Services Section (Grid List) -->
+    <section id="servicos" class="py-24 bg-neutral-900 px-6 md:px-12 relative border-b border-white/10">
+        <div class="max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- Sticky Header -->
+            <div class="lg:col-span-4 h-full">
+                <div class="sticky top-32">
+                    <h2 class="text-6xl md:text-8xl font-bold tracking-tighter text-white mb-6">MENU</h2>
+                    <p class="text-neutral-500 text-sm leading-relaxed max-w-xs mb-8">
+                        Escolha o serviço ideal para o seu estilo. Utilizamos produtos de alta qualidade para garantir o melhor acabamento.
+                    </p>
+                    <a href="https://wa.me/5581982250855" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white border-b border-white pb-1 hover:text-neutral-400 hover:border-neutral-400 transition-colors">
+                         Agende o seu horário <span class="iconify" data-icon="lucide:arrow-right" data-width="14"></span>
+                    </a>
+                </div>
+            </div>
 
-        if (hamburgerMenu && menuMobile) {
-            hamburgerMenu.addEventListener('click', () => {
-            menuMobile.classList.toggle('aberto');
-            // Adiciona/remove a classe 'active' no ícone do hambúrguer
-            hamburgerMenu.classList.toggle('active'); 
-
-            // Altera o ícone do hambúrguer para 'X' e vice-versa
-            if (menuMobile.classList.contains('aberto')) {
-                hamburgerMenu.innerHTML = '&#10005;'; // Ícone 'X' (alternativa: &times;)
-                body.style.overflow = 'hidden'; // Impede o scroll da página quando o menu está aberto
-            } else {
-                hamburgerMenu.innerHTML = '&#9776;'; // Ícone hambúrguer (☰)
-                body.style.overflow = ''; // Permite o scroll da página
-            }
-            });
-
-            // Opcional: Fechar o menu ao clicar em um link (para SPAs ou navegação na mesma página)
-            const menuLinks = menuMobile.querySelectorAll('a');
-            menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (menuMobile.classList.contains('aberto')) {
-                menuMobile.classList.remove('aberto');
-                hamburgerMenu.classList.remove('active');
-                hamburgerMenu.innerHTML = '&#9776;';
-                body.style.overflow = '';
-                }
-            });
-            });
-        }
-        });
-        </script>
-    <main>
-        <section class="carrossel"> 
-            <div class="carrossel_conteiner">
-                <div class="swiper">
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="img/barba_img.jpg" alt="corte-cabelo">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="img/cabelo_img_1.jpg" alt="barba">
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="img/barba_img_1.jpg" alt="foto-tesoura">
-                        </div>
+            <!-- List -->
+            <div class="lg:col-span-8 grid gap-0 border border-white/10 bg-neutral-950">
+                <!-- Service 1 -->
+                <div class="group relative p-8 border-b border-white/10 hover:bg-neutral-900 transition-colors duration-300 flex flex-col md:flex-row justify-between md:items-center gap-4">
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1 group-hover:translate-x-2 transition-transform duration-300">Corte & Estilo</h3>
+                        <p class="text-xs text-neutral-500 font-mono uppercase tracking-wider">Degradê • Social • Tesoura</p>
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="flex items-center gap-6">
+                        <span class="text-xl font-medium text-white">R$ 25</span>
+                        
+                            
+                        </a>
+                    </div>
                 </div>
-                <div class="logo-central">
-                    <img src="img/logo_branca.png" alt="Logo Guilherme Barber">
-                </div>
-            </div>
-            <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-            <script>    
-                const swiper = new Swiper('.swiper', {
-                effect: 'fade',
-                fadeEffect: {
-                    crossFade: true, // Faz a imagem sair e a próxima entrar suavemente
-                },  
-                spaceBetween: 0,
-                slidesPerView: 1,
-                pagination: {
-                    el: '.swiper-pagination',
-                    type: 'bullets',
-                },
-                autoplay: {
-                    delay: 6000,
-                },
-                speed: 1500, // Mais lento (1.5s de transição)
-            });
-            </script>
-        </section>
-        <section id="servicos" class="servicos">
-            <h1>SERVIÇOS</h1>
-            <div class="cards">
-            <div class="card">
-                <i class="fas fa-cut"></i>
-                <h3>Cabelo</h3>
-            </div>
-            <div class="card">
-                <i class="fas fa-beard"></i>
-                <h3>Barba</h3>
-            </div>
-            <div class="card">
-                <i class="fas fa-scissors"></i>
-                <h3>Acabamento</h3>
-            </div>
-            <div class="card">
-                <i class="fas fa-sun"></i>
-                <h3>Platinado</h3>
-            </div>
-            <div class="card">
-                <i class="fas fa-water"></i>
-                <h3>Pigmentação</h3>
-            </div>
-            <div class="card">
-                <i class="fas fa-eye"></i>
-                <h3>Sobrancelha</h3>
-            </div>
-            </div>
-        </section>
 
-        <section id="sobre_nos" class="secao-com-fundo">
-            <div class="grid-cards">
-                <div class="card card-sobre">
-                <h2>SOBRE NÓS</h2>
-                <p>
-                    Na <strong>Guilherme Barber</strong>, unimos tradição e modernidade para oferecer um atendimento de excelência. Buscamos não apenas cuidar da sua aparência, mas também proporcionar uma experiência única, acolhedora e de alto nível.
-                </p>
+                <!-- Service 2 -->
+                <div class="group relative p-8 border-b border-white/10 hover:bg-neutral-900 transition-colors duration-300 flex flex-col md:flex-row justify-between md:items-center gap-4">
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1 group-hover:translate-x-2 transition-transform duration-300">Barba Completa</h3>
+                        <p class="text-xs text-neutral-500 font-mono uppercase tracking-wider">Toalha Quente • Modelagem • Hidratação</p>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <span class="text-xl font-medium text-white">R$ 20</span>
+                        
+                    </div>
                 </div>
-                <div class="card img-card">
-                <img src="img/logo_branca.png" alt="Equipe Guilherme Barber" />
+
+                <!-- Service 3 -->
+                <div class="group relative p-8 border-b border-white/10 hover:bg-neutral-900 transition-colors duration-300 flex flex-col md:flex-row justify-between md:items-center gap-4">
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1 group-hover:translate-x-2 transition-transform duration-300">Combo Master</h3>
+                        <p class="text-xs text-neutral-500 font-mono uppercase tracking-wider">Cabelo + Barba</p>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <span class="text-xl font-medium text-white">R$ 40</span>
+                        
+                    </div>
                 </div>
-                <div class="card img-card">
-                <img src="img/img_tesoura.jpg" alt="Imagem Tesoura" />
+
+                <!-- Service 4 -->
+                <div class="group relative p-8 hover:bg-neutral-900 transition-colors duration-300 flex flex-col md:flex-row justify-between md:items-center gap-4">
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-white mb-1 group-hover:translate-x-2 transition-transform duration-300">Pigmentação</h3>
+                        <p class="text-xs text-neutral-500 font-mono uppercase tracking-wider">Correção de Falhas • Acabamento</p>
+                    </div>
+                    <div class="flex items-center gap-6">
+                        <span class="text-xl font-medium text-white">R$ 15</span>
+                        
+                        </a>
+                    </div>
                 </div>
-                <div class="card img-card">
-                <img src="img/img_barbeador.jpg" alt="Imagem Barba" />
-                </div>
-            </div>
-        </section>
-        <section id="avaliacoes" class="avaliacoes">
-        <h2>AVALIAÇÕES</h2>
-        <div class="avaliacoes-grid">
-            <div class="avaliacao-card">
-            <p class="aspas">“</p>
-            <p class="texto">
-                Barbearia top, corto e recomendo a todos.
-            </p>
-            <p class="autor">— Emerson Sales</p>
-            </div>
-            <div class="avaliacao-card">
-            <p class="aspas">“</p>
-            <p class="texto">
-                Profissional excelente, corta muito bem.
-            </p>
-            <p class="autor">— Gabriel Vasconcelos</p>
-            </div>
-            <div class="avaliacao-card">
-            <p class="aspas">“</p>
-            <p class="texto">
-                Um dos melhores barbeiros do Vasco. No precinho! Profissional carismático e gentil. Me senti muito bem e voltarei mais vezes.
-            </p>
-            <p class="autor">— Andrey Silva</p>
-            </div>
-            <div class="avaliacao-card">
-            <p class="aspas">“</p>
-            <p class="texto">
-                Atendimento e corte bom demais!!!!!
-            </p>
-            <p class="autor">— André Bastos</p>
-            </div>
-            <div class="avaliacao-card">
-            <p class="aspas">“</p>
-            <p class="texto">
-                Top demaisss
-            </p>
-            <p class="autor">— Willians Juliano</p>
-            </div>
-            <div class="avaliacao-card">
-            <p class="aspas">“</p>
-            <p class="texto">
-                Profissional excelente!!
-            </p>
-            <p class="autor">— Rafaela Silva</p>
             </div>
         </div>
-        </section>
-        <section id="contato" class="contato">
-            <h2>AGENDAMENTO</h2>
-            <p>Preencha os dados abaixo e envie seu agendamento pelo WhatsApp</p>
-            <form id="form-agendamento">
-                <div class="form-row">
-                <input type="text" name="nome" placeholder="Seu nome" required>
+    </section>
 
-                <select name="servico" required>
-                    <option value="" disabled selected>Serviço</option>
-                    <option value="Corte Masculino">Corte Masculino</option>
-                    <option value="Barba">Barba</option>
-                    <option value="Corte + Barba">Corte e Barba</option>
-                    <option value="Acabamento">Acabamento</option>
-                    <option value="Sobrancelha">Sobrancelha</option>
-                    <option value="Pigmentação">Pigmentação</option>
-                </select>
-
-                <input type="date" name="data" required>
-
-                <select name="horario" required>
-                    <option value="" disabled selected>Horário</option>
-                    <option value="08:00">08:00</option>
-                    <option value="08:30">08:30</option>
-                    <option value="09:00">09:00</option>
-                    <option value="09:30">09:30</option>
-                    <option value="10:00">10:00</option>
-                    <option value="10:30">10:30</option>
-                    <option value="11:00">11:00</option>
-                    <option value="11:30">11:30</option>
-                    <option value="13:00">13:00</option>
-                    <option value="13:30">13:30</option>
-                    <option value="14:00">14:00</option>
-                    <option value="14:30">14:30</option>
-                    <option value="15:00">15:00</option>
-                    <option value="15:30">15:30</option>
-                    <option value="16:00">16:00</option>
-                    <option value="16:30">16:30</option>
-                    <option value="17:00">17:00</option>
-                    <option value="17:30">17:30</option>
-                    <option value="18:00">18:00</option>
-                    <option value="18:30">18:30</option>
-                    <option value="19:00">19:00</option>
-                    <option value="19:30">19:30</option>
-                </select>
-                </div>
-
-                <textarea name="mensagem" placeholder="Mensagem adicional (opcional)"></textarea>
-                <button type="submit">Enviar para o WhatsApp</button>
-            </form>
-        </section>
-    </main>
-    <footer class="site-footer">
-    <div class="footer-content">
-        <img src="img/logo_branca.png" alt="logo-barbearia" class="logo_footer">
-        <p>&copy; 2025 Guilherme Barber. Todos os direitos reservados. <br>by <a class="link_footer" href="https://www.instagram.com/emers0n.sales/">Emerson Sales</a></p>
+    <!-- Visual Gallery Strip -->
+    <div class="grid grid-cols-2 md:grid-cols-4 h-64 border-b border-white/10">
+        <div class="relative group overflow-hidden border-r border-white/10">
+            <img src="https://plus.unsplash.com/premium_photo-1661380558859-40df8dd91dfd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmFyYmVyfGVufDB8fDB8fHww" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Gallery 1">
+        </div>
+        <div class="relative group overflow-hidden border-r border-white/10">
+            <img src="img/Foto @andreeylucas_DSC0953.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Gallery 2">
+        </div>
+        <div class="relative group overflow-hidden border-r border-white/10 hidden md:block">
+            <img src="img/Foto @andreeylucas_DSC1008.jpg" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Gallery 3">
+        </div>
+        <div class="relative group overflow-hidden hidden md:block">
+            <img src="https://images.unsplash.com/photo-1587909209111-5097ee578ec3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGJhcmJlcnxlbnwwfHwwfHx8MA%3D%3D" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110" alt="Gallery 4">
+        </div>
     </div>
+
+    <!-- CTA / Contact -->
+    <section id="contato" class="py-24 px-6 md:px-12 bg-neutral-950 bg-grid text-center">
+        <div class="max-w-4xl mx-auto border border-white/10 p-12 md:p-24 bg-neutral-900/50 backdrop-blur-sm relative overflow-hidden group">
+            
+            <div class="absolute inset-0 bg-white/5 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
+
+            <div class="relative z-10">
+                <span class="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-6 block">Pronto para mudar?</span>
+                <h2 class="text-5xl md:text-8xl font-bold tracking-tighter text-white mb-8">AGENDAR<br>HORÁRIO</h2>
+                
+                <a href="https://wa.me/5581982250855" target="_blank" class="inline-flex relative group/btn overflow-hidden bg-white text-black px-12 py-5 rounded-sm font-bold text-sm uppercase tracking-widest items-center gap-4 hover:gap-6 transition-all duration-300">
+                    <span class="relative z-10">WhatsApp</span>
+                    <span class="iconify relative z-10" data-icon="lucide:message-circle" data-width="18"></span>
+                    <div class="absolute inset-0 bg-neutral-300 transform translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-in-out"></div>
+                </a>
+
+                <div class="mt-12 flex flex-col md:flex-row justify-center gap-8 md:gap-16 text-xs text-neutral-400 font-mono uppercase tracking-widest">
+                    <div>
+                        <span class="block text-white mb-2">Telefone</span>
+                        81 98225-0855
+                    </div>
+                    <div>
+                        <span class="block text-white mb-2">Endereço</span>
+                        Rua Vasco da Gama, 447<br>Recife - PE
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-white/10 pt-16 pb-8 px-6 md:px-12">
+        <div class="max-w-[90rem] mx-auto flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+            <div>
+                <a href="#" class="text-2xl font-bold tracking-tighter text-white block mb-6">GUILHERME<span class="text-neutral-600">BARBER</span></a>
+                <p class="text-neutral-500 text-sm max-w-xs">
+                    Design, precisão e estilo para o homem moderno em Recife.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-12 md:gap-24">
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest">Links</h4>
+                    <ul class="space-y-2 text-sm text-neutral-500">
+                        <li><a href="#conceito" class="hover:text-white transition-colors">Conceito</a></li>
+                        <li><a href="#servicos" class="hover:text-white transition-colors">Serviços</a></li>
+                        <li><a href="#contato" class="hover:text-white transition-colors">Agendar</a></li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-white text-xs font-bold uppercase tracking-widest">Social</h4>
+                    <ul class="space-y-2 text-sm text-neutral-500">
+                        <li><a href="https://www.instagram.com/guilhermebarber97?igsh=M2liZW9mNGJtd201" class="hover:text-white transition-colors">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-[90rem] mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-neutral-600">© 2026 Guilherme Barber. Recife, Pernambuco.</p>
+            <p class="text-xs text-neutral-700">Design by <a href="https://wa.me/5581987423141">Emerson Sales</a></p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
     <script>
-        window.addEventListener('load', function () {
-            const preloader = document.getElementById('preloader');
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
 
-            // Aguarda só 500ms após carregamento, só para suavidade
-            setTimeout(function () {
-                preloader.style.opacity = '0'; // Inicia fade-out
-            }, 1000);
-
-            // Após a transição CSS de 1s, remove o elemento
-            setTimeout(function () {
-                preloader.style.display = 'none';
-            }, 2000);
-        });
-
-        document.getElementById('form-agendamento').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-            const nome = e.target.nome.value;
-            const servico = e.target.servico.value;
-            const dataOriginal = e.target.data.value;
-            const horario = e.target.horario.value;
-            const mensagem = e.target.mensagem.value;
-
-            // Converter data de "2025-06-12" para "12/06/2025"
-            const [ano, mes, dia] = dataOriginal.split("-");
-            const dataFormatada = `${dia}/${mes}/${ano}`;
-
-            // Montar texto com quebras de linha
-            const texto = 
-            `Olá! Gostaria de agendar um horário.
-
-            Nome: ${nome}
-            Serviço: ${servico}
-            Data: ${dataFormatada}
-            Horário: ${horario}
-            Mensagem: ${mensagem}`;
-
-            // Codifica corretamente para uso em URL do WhatsApp
-            const textoCodificado = encodeURIComponent(texto);
-
-            const numeroWhatsApp = "5581982250855"; // Seu número com DDI + DDD
-            const link = `https://wa.me/${numeroWhatsApp}?text=${textoCodificado}`;
-            window.open(link, '_blank');
+            document.querySelectorAll('.reveal-text, .fade-in-up').forEach(el => observer.observe(el));
         });
     </script>
-
 </body>
 </html>
